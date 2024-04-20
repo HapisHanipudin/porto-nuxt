@@ -4,8 +4,11 @@
       <div class="lg:w-1/4 max-lg:hidden">
         <Sidebar />
       </div>
-      <div class="flex flex-grow justify-center items-center bg-zinc-900 rounded-3xl p-12">
-        <NuxtPage />
+      <div class="flex overflow-hidden flex-col flex-grow bg-zinc-900 rounded-3xl">
+        <Nav />
+        <main class="flex w-full justify-center items-center p-8">
+          <NuxtPage />
+        </main>
       </div>
     </div>
   </div>
