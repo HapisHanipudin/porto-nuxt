@@ -4,7 +4,7 @@
       <div class="lg:w-1/4 max-lg:hidden">
         <Sidebar />
       </div>
-      <div class="flex overflow-hidden flex-col flex-grow bg-zinc-900 rounded-3xl">
+      <div class="flex h-min overflow-hidden flex-col flex-grow bg-zinc-900 rounded-3xl">
         <Nav />
         <main class="flex w-full justify-center items-center p-8">
           <NuxtPage />

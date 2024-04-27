@@ -1,5 +1,1 @@
-<template>
-  <div class="w-full min-h-[200vh]">
-    <Spotify />
-  </div>
-</template>
+<template>ini {{ useRoute().path }}</template>
