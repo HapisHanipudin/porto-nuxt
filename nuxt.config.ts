@@ -3,13 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
-      SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,
-      SPOTIFY_AUTH_CODE: process.env.SPOTIFY_AUTH_CODE,
-      SPOTIFY_REFRESH_TOKEN: process.env.SPOTIFY_REFRESH_TOKEN,
+      SpotifyClientId: process.env.SPOTIFY_CLIENT_ID,
+      SpotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+      SpotifyRefreshToken: process.env.SPOTIFY_REFRESH_TOKEN,
     },
   },
-
   app: {
     head: {
       title: "Hapis Hanipudin",

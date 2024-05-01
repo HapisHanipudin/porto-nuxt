@@ -1,26 +1,21 @@
 <template>
-  <div :class="{ 'bg-zinc-700': isLoading, 'bg-green-600': spotify.currentlyPlaying, 'bg-zinc-800': spotify.recentlyPlaying }" class="flex gap-3 duration-150 transition-all ease-in-out p-3 rounded-xl">
-    <img
-      :class="{ 'animate-pulse bg-zinc-600 border-0': isLoading }"
-      class="rounded aspect-square w-16"
-      :src="spotify.currentlyPlaying ? spotify.currentlyPlaying?.item.album.images[2].url : spotify.recentlyPlaying?.album?.images[2].url"
-      alt=""
-    />
+  <div
+    :class="{
+      'bg-zinc-700': isLoading,
+      'bg-green-600': spotify?.litsening && !isLoading,
+      'bg-zinc-800': !spotify?.litsening && !isLoading,
+    }"
+    class="flex gap-3 duration-150 transition-all ease-in-out p-3 rounded-xl"
+  >
+    <img :class="{ 'animate-pulse bg-zinc-600 border-0': isLoading }" class="rounded aspect-square w-16" :src="isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
     <div class="flex grow justify-between">
       <div :class="isLoading ? 'gap-2' : ''" class="flex-col flex justify-center">
-        <a
-          :href="spotify.currentlyPlaying ? spotify.currentlyPlaying?.item.album.external_urls.spotify : spotify.recentlyPlaying?.album.external_urls.spotify"
-          class="font-semibold"
-          :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': isLoading }"
-          >{{ isLoading ? "" : spotify.currentlyPlaying ? spotify.currentlyPlaying?.item.name : spotify.recentlyPlaying?.name }}</a
-        >
+        <a target="_blank" :href="spotify?.track?.external_urls?.spotify" class="font-semibold" :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': isLoading }">{{ isLoading ? "" : spotify?.track?.name }}</a>
         <span :class="{ 'p-2 w-32 animate-pulse bg-zinc-600 rounded': isLoading }">
-          <a v-for="(artist, index) in spotify.currentlyPlaying ? spotify.currentlyPlaying?.item.artists : spotify.recentlyPlaying?.artists" :href="artist?.external_urls?.spotify"
-            >{{ index >= 1 ? ", " : "" }}{{ isLoading ? "" : artist?.name }}</a
-          >
+          <a target="_blank" v-for="(artist, index) in spotify?.track?.artists" :href="artist?.external_urls?.spotify">{{ index >= 1 ? ", " : "" }}{{ isLoading ? "" : artist?.name }}</a>
         </span>
       </div>
-      <a href="https://open.spotify.com/user/fngdg86af3asj1xk0gjjfcg07?si=cdeb5c871dc04358">
+      <a target="_blank" href="https://open.spotify.com/user/fngdg86af3asj1xk0gjjfcg07?si=cdeb5c871dc04358">
         <svg xmlns="http://www.w3.org/2000/svg" height="14" width="13.5625" viewBox="0 0 496 512">
           <path
             fill="currentColor"
@@ -36,12 +31,15 @@
 const isLoading = ref(true);
 const spotify = useSpotifyStore();
 
-onBeforeMount(async () => {
+if (!spotify.loaded) {
   try {
     await spotify.initSpotify();
-    isLoading.value = false;
   } catch (error) {
     console.log(error);
+  } finally {
+    isLoading.value = false;
   }
-});
+} else {
+  isLoading.value = false;
+}
 </script>
