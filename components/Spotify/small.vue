@@ -7,7 +7,7 @@
     }"
     class="flex gap-3 duration-150 transition-all ease-in-out p-3 rounded-xl"
   >
-    <img :class="{ 'animate-pulse bg-zinc-600 border-0': isLoading }" class="rounded aspect-square w-16" :src="isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
+    <img :class="{ 'animate-pulse bg-zinc-600 border-0': isLoading }" class="rounded aspect-square" :src="isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
     <div class="flex grow justify-between">
       <div :class="isLoading ? 'gap-2' : ''" class="flex-col flex justify-center">
         <a target="_blank" :href="spotify?.track?.external_urls?.spotify" class="font-semibold" :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': isLoading }">{{ isLoading ? "" : spotify?.track?.name }}</a>
