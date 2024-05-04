@@ -8,6 +8,7 @@ export const useSpotifyStore = defineStore({
     track: {},
     progress: 0,
     loaded: false,
+    isLoading: true,
   }),
   actions: {
     async initSpotify() {
@@ -18,6 +19,7 @@ export const useSpotifyStore = defineStore({
       this.track = track;
       this.progress = progress;
       this.loaded = true;
+      this.isLoading = false;
       if (this.litsening) {
         const intervalId = setInterval(async () => {
           if (this.progress < this.track.duration_ms) {

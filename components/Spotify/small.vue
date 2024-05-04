@@ -1,18 +1,18 @@
 <template>
   <div
     :class="{
-      'bg-zinc-700': isLoading,
-      'bg-green-600': spotify?.litsening && !isLoading,
-      'bg-zinc-800': !spotify?.litsening && !isLoading,
+      'bg-zinc-700': spotify.isLoading,
+      'bg-green-600': spotify?.litsening && !spotify.isLoading,
+      'bg-zinc-800': !spotify?.litsening && !spotify.isLoading,
     }"
     class="flex gap-3 duration-150 transition-all ease-in-out p-3 rounded-xl"
   >
-    <img :class="{ 'animate-pulse bg-zinc-600 border-0': isLoading }" class="rounded aspect-square" :src="isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
+    <img :class="{ 'animate-pulse bg-zinc-600 border-0': spotify.isLoading }" class="rounded aspect-square" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
     <div class="flex grow justify-between">
-      <div :class="isLoading ? 'gap-2' : ''" class="flex-col flex justify-center">
-        <a target="_blank" :href="spotify?.track?.external_urls?.spotify" class="font-semibold" :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': isLoading }">{{ isLoading ? "" : spotify?.track?.name }}</a>
-        <span :class="{ 'p-2 w-32 animate-pulse bg-zinc-600 rounded': isLoading }">
-          <a target="_blank" v-for="(artist, index) in spotify?.track?.artists" :href="artist?.external_urls?.spotify">{{ index >= 1 ? ", " : "" }}{{ isLoading ? "" : artist?.name }}</a>
+      <div :class="spotify.isLoading ? 'gap-2' : ''" class="flex-col flex justify-center">
+        <a target="_blank" :href="spotify?.track?.external_urls?.spotify" class="font-semibold" :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': spotify.isLoading }">{{ spotify.isLoading ? "" : spotify?.track?.name }}</a>
+        <span :class="{ 'p-2 w-32 animate-pulse bg-zinc-600 rounded': spotify.isLoading }">
+          <a target="_blank" v-for="(artist, index) in spotify?.track?.artists" :href="artist?.external_urls?.spotify">{{ index >= 1 ? ", " : "" }}{{ spotify.isLoading ? "" : artist?.name }}</a>
         </span>
       </div>
       <a target="_blank" href="https://open.spotify.com/user/fngdg86af3asj1xk0gjjfcg07?si=cdeb5c871dc04358">
@@ -28,18 +28,14 @@
 </template>
 
 <script setup>
-const isLoading = ref(true);
 const spotify = useSpotifyStore();
 
-if (!spotify.loaded) {
+if (spotify.isLoading) {
   try {
     await spotify.initSpotify();
   } catch (error) {
     console.log(error);
-  } finally {
-    isLoading.value = false;
   }
-} else {
-  isLoading.value = false;
 }
 </script>
+s

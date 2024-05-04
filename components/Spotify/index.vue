@@ -1,14 +1,14 @@
 <template>
   <div
     :class="{
-      ' bg-dark-700': isLoading,
-      'bg-green-600': spotify?.litsening && !isLoading,
-      'bg-zinc-800': !spotify?.litsening && !isLoading,
+      ' bg-dark-700': spotify.isLoading,
+      'bg-green-600': spotify?.litsening && !spotify.isLoading,
+      'bg-zinc-800': !spotify?.litsening && !spotify.isLoading,
     }"
     class="p-5 rounded-xl duration-150 w-full transition-all ease-in-out flex flex-col gap-3"
   >
     <div class="flex justify-between">
-      <h3 :class="{ 'p-4 bg-white/20 animate-pulse rounded-lg w-52': isLoading }" class="text-lg font-semibold uppercase">{{ isLoading ? "" : spotify?.isPlaying ? "Currently Playing" : "Recently Played" }}</h3>
+      <h3 :class="{ 'p-4 bg-white/20 animate-pulse rounded-lg w-52': spotify.isLoading }" class="text-lg font-semibold uppercase">{{ spotify.isLoading ? "" : spotify?.isPlaying ? "Currently Playing" : "Recently Played" }}</h3>
       <a
         target="_blank"
         href="
@@ -23,19 +23,20 @@
       </a>
     </div>
     <div class="flex max-sm:flex-col gap-4 items-center">
-      <img :class="{ 'animate-pulse bg-white/20 border-0': isLoading }" class="rounded w-36 aspect-square" :src="isLoading ? '' : spotify?.track?.album?.images[1]?.url" alt="" />
+      <img :class="{ 'animate-pulse bg-white/20 border-0': spotify.isLoading }" class="rounded w-36 aspect-square" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[1]?.url" alt="" />
       <div class="flex grow max-sm:w-full flex-col gap-2">
-        <a target="_blank" :href="!isLoading ? spotify?.track?.external_urls?.spotify : ''" :class="{ 'p-4 bg-white/20 animate-pulse rounded-lg w-40': isLoading }" class="text-xl font-semibold">{{
-          isLoading ? "" : spotify?.track?.name
+        <a target="_blank" :href="!spotify.isLoading ? spotify?.track?.external_urls?.spotify : ''" :class="{ 'p-4 bg-white/20 animate-pulse rounded-lg w-40': spotify.isLoading }" class="text-xl font-semibold">{{
+          spotify.isLoading ? "" : spotify?.track?.name
         }}</a>
-        <span :class="{ 'p-3 bg-white/20 animate-pulse rounded-lg w-32': isLoading }" class="text-lg"
-          >{{ isLoading ? "" : "by" }}
-          <span v-if="!isLoading" v-for="(artist, index) in spotify?.track?.artists" class="font-semibold"
-            >{{ index >= 1 ? ", " : "" }} <a target="_blank" :href="artist?.external_urls?.spotify" class="hover:underline">{{ isLoading ? "" : artist?.name }}</a></span
+        <span :class="{ 'p-3 bg-white/20 animate-pulse rounded-lg w-32': spotify.isLoading }" class="text-lg"
+          >{{ spotify.isLoading ? "" : "by" }}
+          <span v-if="!spotify.isLoading" v-for="(artist, index) in spotify?.track?.artists" class="font-semibold"
+            >{{ index >= 1 ? ", " : "" }} <a target="_blank" :href="artist?.external_urls?.spotify" class="hover:underline">{{ spotify.isLoading ? "" : artist?.name }}</a></span
           >
         </span>
-        <span :class="{ 'p-3 bg-white/20 animate-pulse rounded-lg w-44': isLoading }" class="text-lg"
-          >{{ isLoading ? "" : "on" }} <a target="_blank" class="hover:underline font-semibold" :href="isLoading ? '' : spotify?.track?.album.external_urls.spotify">{{ isLoading ? "" : spotify.track?.album.name }}</a></span
+        <span :class="{ 'p-3 bg-white/20 animate-pulse rounded-lg w-44': spotify.isLoading }" class="text-lg"
+          >{{ spotify.isLoading ? "" : "on" }}
+          <a target="_blank" class="hover:underline font-semibold" :href="spotify.isLoading ? '' : spotify?.track?.album.external_urls.spotify">{{ spotify.isLoading ? "" : spotify.track?.album.name }}</a></span
         >
         <div v-if="spotify.isPlaying" class="bg-green-700 w-full h-2 transition-all rounded">
           <div class="bg-white h-2 transition-all rounded" :style="{ width: `${spotify.progressBar}%` }"></div>
@@ -51,19 +52,14 @@
 
 <script setup>
 const spotify = useSpotifyStore();
-const isLoading = ref(true);
 
 onBeforeMount(async () => {
-  if (!spotify.loaded) {
+  if (spotify.isLoading) {
     try {
       await spotify.initSpotify();
     } catch (error) {
       console.log(error);
-    } finally {
-      isLoading.value = false;
     }
-  } else {
-    isLoading.value = false;
   }
 });
 </script>
