@@ -20,16 +20,16 @@ export const useSpotifyStore = defineStore({
       this.progress = progress;
       this.loaded = true;
       this.isLoading = false;
-      if (this.litsening) {
-        const intervalId = setInterval(async () => {
-          if (this.progress < this.track.duration_ms) {
-            this.progress += 1000;
-            await this.initSpotify();
-          } else {
-            clearInterval(intervalId);
-            this.initSpotify();
-          }
+      this.incrementProgress();
+    },
+    incrementProgress() {
+      if (this.litsening && this.isPlaying && this.progress < this.track.duration_ms) {
+        setTimeout(() => {
+          this.progress += 1000;
+          this.incrementProgress();
         }, 1000);
+      } else {
+        this.initSpotify();
       }
     },
   },
