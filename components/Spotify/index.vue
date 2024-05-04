@@ -52,14 +52,4 @@
 
 <script setup>
 const spotify = useSpotifyStore();
-
-onBeforeMount(async () => {
-  if (spotify.isLoading) {
-    try {
-      await spotify.initSpotify();
-    } catch (error) {
-      console.log(error);
-    }
-  }
-});
 </script>
