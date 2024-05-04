@@ -1,6 +1,6 @@
 <template>
   <div class="py-4 px-8 bg-zinc-800 w-min rounded-ee-3xl z-0">
-    <nav class="flex gap-6 relative">
+    <nav class="flex gap-6 relative font-semibold">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/about">About</NuxtLink>
       <NuxtLink to="/projects">Projects</NuxtLink>
