@@ -5,56 +5,48 @@
       <div>
         <span>Hi! I'm</span>
         <h1 class="text-3xl font-bold">Hapis Hanipudin</h1>
-        <span class="text-sm relative"
-          >I'm a {{ text }}
-          <div class="w-1 h-full absolute -right-1 blink top-0 bg-slate-300"></div
-        ></span>
+        <span class="text-sm relative" :class="{ typing: isTyping }">
+          I'm a {{ text }}
+          <div class="w-1 h-full absolute -right-1 blink top-0 bg-slate-300"></div>
+        </span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-
 const texts = ["Frontend Developer", "Fullstack Developer", "UI/UX Designer", "Freelancer"];
-
 const text = ref("");
 const isTyping = ref(true);
+const index = ref(0);
 const errors = ref(0);
-const currentTextIndex = ref(0);
 
-const type = () => {
-  const currentText = texts[currentTextIndex.value % texts.length];
-  if (isTyping.value) {
-    text.value = currentText.substring(0, text.value.length + 1);
-  } else {
-    text.value = currentText.substring(0, text.value.length - 1);
-  }
-
-  if (text.value.length === currentText.length) {
-    setTimeout(() => {
-      isTyping.value = false;
-      setTimeout(() => {
-        currentTextIndex.value++;
+const loop = async () => {
+  while (true) {
+    if (isTyping.value) {
+      const txt = texts[index.value % texts.length];
+      text.value = text.value + txt[text.value.length];
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      if (text.value.length === txt.length) {
+        isTyping.value = false;
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        for (let i = text.value.length - 1; i >= 0; i--) {
+          text.value = text.value.slice(0, i);
+          await new Promise((resolve) => setTimeout(resolve, 50));
+        }
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        index.value++;
         isTyping.value = true;
-      }, 2000);
-    }, 2000);
-  } else if (text.value.length === 0) {
-    errors.value++;
-    if (errors.value > 3) {
-      text.value = "Error: Too many tries.";
+      }
+    } else {
+      text.value = text.value.slice(0, -1);
+      if (text.value.length === 0) {
+        index.value++;
+        isTyping.value = true;
+      }
     }
   }
 };
-
-const loop = () => {
-  if (text.value !== "Error: Too many tries.") {
-    type();
-    setTimeout(loop, isTyping.value ? 100 : 50);
-  }
-};
-
 onMounted(loop);
 </script>
 <style scoped lang="css">
@@ -70,7 +62,7 @@ onMounted(loop);
   }
 }
 
-.blink {
+.typing .blink {
   animation: blink 1s step-end infinite;
 }
 </style>
