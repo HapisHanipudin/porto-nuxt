@@ -62,7 +62,7 @@ onMounted(loop);
   }
 }
 
-.typing .blink {
+.blink {
   animation: blink 1s step-end infinite;
 }
 </style>
