@@ -1,8 +1,4 @@
-<template>
-  <div class="w-full flex">
-    <Spotify />
-  </div>
-</template>
+<template>ini {{ route.path }}</template>
 <script setup>
 const route = useRoute();
 </script>
