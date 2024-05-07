@@ -1,11 +1,21 @@
 <template>
   <div class="py-4 px-8 bg-zinc-800 w-min rounded-ee-3xl z-0">
     <nav class="flex gap-6 relative font-semibold">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/projects">Projects</NuxtLink>
-      <NuxtLink to="/contact">Contact</NuxtLink>
-      <NuxtLink to="/dashboard">Dashboard</NuxtLink>
+      <NuxtLink to="/"
+        ><span class="sm:hidden"><Icon name="mdi:home" class="hidden" /></span> <span class="max-sm:hidden max">Home</span></NuxtLink
+      >
+      <NuxtLink to="/about"
+        ><span class="sm:hidden"><Icon name="mdi:account" class="hidden" /></span> <span class="max-sm:hidden max">About</span></NuxtLink
+      >
+      <NuxtLink to="/projects"
+        ><span class="sm:hidden"><Icon name="mdi:briefcase" class="hidden" /></span> <span class="max-sm:hidden max">Projects</span></NuxtLink
+      >
+      <NuxtLink to="/contact"
+        ><span class="sm:hidden"><Icon name="mdi:email" class="hidden" /></span> <span class="max-sm:hidden max">Contact</span></NuxtLink
+      >
+      <NuxtLink to="/dashboard"
+        ><span class="sm:hidden"><Icon name="mdi:view-dashboard" class="hidden" /></span> <span class="max-sm:hidden max">Dashboard</span></NuxtLink
+      >
       <div
         :class="{
           'translate-x-0': route.path === '/',
