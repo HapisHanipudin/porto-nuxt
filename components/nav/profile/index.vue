@@ -26,7 +26,7 @@ const loop = async () => {
     if (isTyping.value) {
       const txt = texts[index.value % texts.length];
       text.value = text.value + txt[text.value.length];
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await new Promise((resolve) => setTimeout(resolve, 125));
       if (text.value.length === txt.length) {
         isTyping.value = false;
         await new Promise((resolve) => setTimeout(resolve, 500));
