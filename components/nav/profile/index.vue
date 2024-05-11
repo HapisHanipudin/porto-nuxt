@@ -1,7 +1,7 @@
 <template>
-  <div class="flex gap-4">
+  <div class="flex gap-4 items-center">
     <img src="~/assets/img/squarelogo.png" class="rounded-2xl border-2 border-zinc-700 h-16 aspect-square" alt="" />
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-3 w-full">
       <div>
         <span>Hi! I'm</span>
         <h1 class="text-3xl font-bold">Hapis Hanipudin</h1>
@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-const texts = ["Frontend Developer", "Fullstack Developer", "UI/UX Designer", "Freelancer"];
+const texts = ["Frontend Developer", "Fullstack Developer", "Freelancer", "Web App Developer"];
 const text = ref("");
 const isTyping = ref(true);
 const index = ref(0);

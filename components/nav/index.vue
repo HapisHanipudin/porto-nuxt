@@ -2,19 +2,19 @@
   <div class="sm:py-4 px-8 py-5 bg-zinc-800 w-min rounded-ee-3xl z-0 transition-all duration-300 ease-in-out">
     <nav class="flex gap-6 relative font-semibold transition-all duration-300 ease-in-out">
       <NuxtLink to="/"
-        ><span class="sm:hidden w-8"><Icon name="mdi:home" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Home</span></NuxtLink
+        ><span class="sm:hidden w-8"><Icon name="ic:round-home" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Home</span></NuxtLink
       >
       <NuxtLink to="/about"
-        ><span class="sm:hidden w-6"><Icon name="mdi:account" class="w-8 h-8" /></span> <span class="max-sm:hidden max">About</span></NuxtLink
+        ><span class="sm:hidden w-6"><Icon name="ic:round-account-circle" class="w-8 h-8" /></span> <span class="max-sm:hidden max">About</span></NuxtLink
       >
       <NuxtLink to="/projects"
-        ><span class="sm:hidden w-6"><Icon name="mdi:briefcase" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Projects</span></NuxtLink
+        ><span class="sm:hidden w-6"><Icon name="ic:round-work" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Projects</span></NuxtLink
       >
       <NuxtLink to="/contact"
-        ><span class="sm:hidden w-6"><Icon name="mdi:email" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Contact</span></NuxtLink
+        ><span class="sm:hidden w-6"><Icon name="ic:round-mail" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Contact</span></NuxtLink
       >
       <NuxtLink to="/dashboard"
-        ><span class="sm:hidden w-6"><Icon name="mdi:view-dashboard" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Dashboard</span></NuxtLink
+        ><span class="sm:hidden w-6"><Icon name="ic:round-dashboard" class="w-8 h-8" /></span> <span class="max-sm:hidden max">Dashboard</span></NuxtLink
       >
       <div
         :class="{

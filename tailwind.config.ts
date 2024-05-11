@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 
 export default <Partial<Config>>{
   content: [],
+  plugins: [require("tailwind-scrollbar")],
   theme: {
     extend: {
       animation: {
@@ -43,5 +44,4 @@ export default <Partial<Config>>{
       },
     },
   },
-  plugins: [],
 };

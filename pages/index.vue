@@ -6,7 +6,7 @@
           Hi, I'm Hapis
           <p class="animate-shake">👋</p>
         </h2>
-        <span class="text-lg text-gray-200">Based in Depok <span class="text-xl">🇮🇩</span></span>
+        <span class="text-lg text-gray-300">Based in Depok <span class="text-xl">🇮🇩</span></span>
       </div>
       <p class="">
         A spirited junior front-end developer with a flair for digital innovation, ardently striving to transition into a full-stack role. Passionately immersed in the world of technology, I craft elegant solutions that seamlessly blend
@@ -15,7 +15,8 @@
     </section>
     <hr class="border-zinc-700" />
     <section>
-      <h2 class="text-2xl font-semibold"><Icon name="mdi:briefcase" /> My Projects</h2>
+      <h2 class="text-2xl font-semibold"><Icon name="ic:round-work" /> My Career</h2>
+      <Career />
     </section>
   </div>
 </template>
