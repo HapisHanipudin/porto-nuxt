@@ -12,10 +12,12 @@
         design.
       </p>
       <p>I am currently exploring the field of web application development. my goal is to become a full-stack developer. I have mastered several technology stacks and am exploring javascript.</p>
-      <div class="flex flex-col gap-1 border-b border-dashed border-gray-300 pb-4">
+      <div class="flex flex-col gap-1 border-b border-dashed border-gray-400 pb-4 mb-4">
         <h2 class="text-2xl font-bold flex gap-1"><Icon name="ic:round-school" /> Educations</h2>
-        <career-card></career-card>
       </div>
+      <career-card title="Ma'had Rahmaniyah Al-Islamy" date="2019 - 2022" location="Bogor, Indonesia" company="">
+        <img class="w-16 h-16 rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyNmYVoT9uQSIP8M6criLmDoqrhgBEtbWlAD6P4qXDEw&s" alt="" />
+      </career-card>
     </section>
   </div>
 </template>
