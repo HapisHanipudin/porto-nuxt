@@ -14,9 +14,6 @@
       </p>
     </section>
     <hr class="border-zinc-700" />
-    <section>
-      <h2 class="text-2xl font-semibold"><Icon name="ic:round-work" /> My Career</h2>
-      <Career />
-    </section>
+    <Career />
   </div>
 </template>
