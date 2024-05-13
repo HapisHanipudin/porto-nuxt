@@ -16,7 +16,7 @@
 const contents = ref([
   { name: "Hapis Hanipudin", title: "Linkedin", link: "https://www.linkedin.com/in/hapishanipudin/", icon: "mdi:linkedin" },
 
-  { name: "Hapis H.", title: "Upwork", link: "https://www.upwork.com/freelancers/~01b1c5b9c", icon: "bxl:upwork" },
+  { name: "Hapis H.", title: "Upwork", link: "https://www.upwork.com/freelancers/~0115054af27997419a", icon: "bxl:upwork" },
   { name: "HapisHanipudin.", title: "Github", link: "https://github.com/hapishanipudin", icon: "mdi:github" },
   { name: "Depok, Indonesia.", title: "Location", link: "https://www.google.com/maps/place/Depok,+Indonesia", icon: "mdi:google-maps" },
 ]);

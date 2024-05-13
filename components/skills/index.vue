@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col gap-3">
+  <section id="skills" class="flex flex-col gap-3">
     <div class="flex flex-col gap-1">
       <h2 class="text-2xl font-semibold"><Icon name="ic:round-code" /> My Skills</h2>
       <span class="text-lg text-gray-300"> Here are some of my skills</span>
