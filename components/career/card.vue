@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-2 bg-dark-400 p-4 rounded-2xl w-1/3 items-center">
+  <div class="flex gap-2 bg-dark-400 p-4 rounded-2xl items-center">
     <div class="w-16 h-16 rounded-xl flex items-center justify-center bg-zinc-500">
       <slot>
         <Icon class="w-8 h-8" name="mdi:company" />
