@@ -1,3 +1,5 @@
+import client from "./redis";
+
 // This gets the access token from Spotify to connect to the API using provided refresh token.
 export const getAccessToken = async () => {
   const config = useRuntimeConfig();
@@ -7,12 +9,15 @@ export const getAccessToken = async () => {
       Authorization: `Basic ${btoa(`${config.public.SpotifyClientId}:${config.public.SpotifyClientSecret}`)}`,
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    query: {
+    body: new URLSearchParams({
       grant_type: "refresh_token",
       refresh_token: config.public.SpotifyRefreshToken,
       client_id: config.public.SpotifyClientId,
-    },
+    }),
   });
+
+  await client.setEx("spotifyAccessToken", response.expires_in - 60, response.access_token);
+
   return response;
 };
 

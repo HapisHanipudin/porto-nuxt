@@ -6,8 +6,8 @@
         <span>Hi! I'm</span>
         <h1 class="text-3xl font-bold">Hapis Hanipudin</h1>
         <span class="text-sm relative" :class="{ typing: isTyping }">
-          I'm a {{ text }}
-          <div class="w-1 h-full absolute -right-1 blink top-0 bg-slate-300"></div>
+          a {{ text }}
+          <div class="w-1 h-full absolute -translate-x-1 -right-1 blink top-0 bg-slate-300"></div>
         </span>
       </div>
     </div>
@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-const texts = ["Frontend Developer", "Fullstack Developer", "Freelancer", "Web App Developer"];
+const texts = ["Frontend Developer", "Backend Developer", "Tech Enthusiast", "Fullstack Developer", "Freelancer", "Web App Developer"];
 const text = ref("");
 const isTyping = ref(true);
 const index = ref(0);

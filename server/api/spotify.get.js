@@ -1,5 +1,7 @@
 import { getAccessToken, getNowPlaying, getRecentlyPlayed } from "../utils/spotify";
 
+import client from "../utils/redis";
+
 export default defineEventHandler(async (event) => {
   const res = {
     litsening: false,
@@ -8,11 +10,16 @@ export default defineEventHandler(async (event) => {
     progress: null,
   };
 
-  const { access_token: accessToken } = await getAccessToken();
+  let accessToken = await client.get("spotifyAccessToken");
+
+  if (!accessToken) {
+    const { access_token: token } = await getAccessToken();
+    accessToken = token;
+  }
 
   const nowPlaying = await getNowPlaying(accessToken);
   if (nowPlaying && nowPlaying.currently_playing_type == "track") {
-    res.litsening = true;
+    res.litsening = nowPlaying.is_playing;
     res.isPlaying = nowPlaying.is_playing;
     res.track = nowPlaying.item;
     res.progress = nowPlaying.progress_ms;

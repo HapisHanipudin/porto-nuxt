@@ -4,7 +4,7 @@
       <h2 class="text-2xl font-semibold"><Icon name="ic:round-code" /> My Skills</h2>
       <span class="text-lg text-gray-300"> Here are some of my skills</span>
     </div>
-    <div class="flex gap-3">
+    <div class="flex gap-3 flex-wrap">
       <SkillsIcon v-for="skill in skills" :key="skill.name" :name="skill.name" :icon="skill.icon" />
     </div>
   </section>

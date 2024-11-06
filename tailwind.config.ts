@@ -27,7 +27,7 @@ export default <Partial<Config>>{
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
         dark: {
