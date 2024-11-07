@@ -23,6 +23,8 @@ export default defineNuxtConfig({
       meta: [
         { name: "Portfolio Hapis Hanipudin", content: "Hapis Hanipudin adalah seorang web developer" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { property: "og:title", content: "Hapis Hanipudin" },
+        { property: "og:description", content: "Portofolio Web of Hapis Hanipudin" },
         { property: "og:image", content: "https://hapishanipudin.com/img/squarelogo.webp" },
       ],
     },
