@@ -24,7 +24,7 @@
       </a>
     </div>
     <div class="flex gap-4 items-center">
-      <img :class="{ 'animate-pulse bg-white/20 border-0': spotify.isLoading }" class="rounded w-36 aspect-square" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[1]?.url" alt="" />
+      <NuxtImg width="144" height="144" :class="{ 'animate-pulse bg-white/20 border-0': spotify.isLoading }" class="rounded w-36 aspect-square" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[1]?.url" alt="" />
       <div class="flex grow flex-col gap-2">
         <a target="_blank" :href="!spotify.isLoading ? spotify?.track?.external_urls?.spotify : ''" :class="{ 'p-4 bg-white/20 animate-pulse rounded-lg w-40': spotify.isLoading }" class="text-lg sm:text-xl font-semibold">{{
           spotify.isLoading ? "" : spotify?.track?.name

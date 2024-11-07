@@ -2,6 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  image: {
+    domains: ["i.scdn.co/"],
+  },
+
   runtimeConfig: {
     public: {
       SpotifyClientId: process.env.SPOTIFY_CLIENT_ID,
@@ -23,6 +27,6 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@pinia/nuxt", "@nuxt/devtools", "@nuxtjs/tailwindcss", "@nuxt/icon"],
+  modules: ["@pinia/nuxt", "@nuxt/devtools", "@nuxtjs/tailwindcss", "@nuxt/icon", "@nuxt/image"],
   compatibilityDate: "2024-11-05",
 });

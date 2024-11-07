@@ -7,7 +7,7 @@
       </div>
       <div class="flex h-min overflow-hidden transition-all duration-700 w-full ease-in-out flex-col">
         <!-- <Nav /> -->
-        <main class="flex justify-center transition-all duration-700 ease-in-out items-center pt-6 px-6">
+        <main class="flex justify-center transition-all duration-700 ease-in-out items-center lg:pt-6 px-6">
           <NuxtPage />
         </main>
       </div>

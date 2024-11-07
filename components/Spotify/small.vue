@@ -13,7 +13,7 @@
           <div :class="{ 'animate-pulse bg-zinc-600 border-0': spotify.isLoading }" class="w-[3.75rem] h-[3.75rem] rotate-45 rounded-full border border-white flex items-center justify-center overflow-hidden relative">
             <div class="w-[15px] h-[15px] rotate-45 rounded-full border bg-black border-white flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
-            <img class="rounded aspect-square object-cover" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
+            <NuxtImg width="100%" height="100%" class="rounded aspect-square object-cover" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
           </div>
         </div>
         <div :class="spotify.isLoading ? 'gap-2' : ''" class="flex-col flex justify-center">
