@@ -17,13 +17,23 @@
           </div>
         </div>
         <div :class="spotify.isLoading ? 'gap-2' : ''" class="flex-col flex justify-center">
-          <a target="_blank" :href="spotify?.track?.external_urls?.spotify" class="font-semibold text-wrap" :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': spotify.isLoading }">{{ spotify.isLoading ? "" : spotify?.track?.name }}</a>
+          <a
+            rel="noopener noreferrer"
+            aria-label="Spotify Track - opens in new tab"
+            target="_blank"
+            :href="spotify?.track?.external_urls?.spotify"
+            class="font-semibold text-wrap"
+            :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': spotify.isLoading }"
+            >{{ spotify.isLoading ? "" : spotify?.track?.name }}</a
+          >
           <span :class="{ 'p-2 w-32 animate-pulse bg-zinc-600 rounded': spotify.isLoading }">
-            <a target="_blank" v-for="(artist, index) in spotify?.track?.artists" :href="artist?.external_urls?.spotify">{{ index >= 1 ? ", " : "" }}{{ spotify.isLoading ? "" : artist?.name }}</a>
+            <a rel="noopener noreferrer" aria-label="Spotify Artist - opens in new tab" target="_blank" v-for="(artist, index) in spotify?.track?.artists" :href="artist?.external_urls?.spotify"
+              >{{ index >= 1 ? ", " : "" }}{{ spotify.isLoading ? "" : artist?.name }}</a
+            >
           </span>
         </div>
       </div>
-      <a class="ml-auto" target="_blank" href="https://open.spotify.com/user/fngdg86af3asj1xk0gjjfcg07?si=cdeb5c871dc04358">
+      <a class="ml-auto" target="_blank" rel="noopener noreferrer" aria-label="Spotify Profile - opens in new tab" href="https://open.spotify.com/user/fngdg86af3asj1xk0gjjfcg07?si=cdeb5c871dc04358">
         <svg xmlns="http://www.w3.org/2000/svg" height="14" width="13.5625" viewBox="0 0 496 512">
           <path
             fill="currentColor"

@@ -16,13 +16,14 @@ export default defineNuxtConfig({
   },
 
   app: {
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
+      htmlAttrs: { lang: "en" },
       title: "Hapis Hanipudin",
-      meta: [{ name: "Portfolio Hapis Hanipudin", content: "Hapis Hanipudin adalah seorang web developer" }],
-      link: [
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" },
+      meta: [
+        { name: "Portfolio Hapis Hanipudin", content: "Hapis Hanipudin adalah seorang web developer" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { property: "og:image", content: "https://hapishanipudin.com/img/squarelogo.webp" },
       ],
     },
   },

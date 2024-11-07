@@ -1,23 +1,23 @@
 <template>
   <div class="lg:py-4 px-4 py-5 z-0 transition-all duration-300 ease-in-out">
     <nav class="flex lg:flex-col gap-6 relative font-semibold transition-all duration-300 ease-in-out">
-      <NuxtLink class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/">
+      <NuxtLink aria-label="Home Page" class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/">
         <span class="w-8 flex items-center justify-end group-hover:-rotate-[15deg] transition-all ease-in-out duration-300"> <Icon name="ic:round-home" class="w-8 h-8 flex" /></span>
         <span class="max-md:hidden max">Home</span></NuxtLink
       >
-      <NuxtLink class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/about">
+      <NuxtLink aria-label="About Page" class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/about">
         <span class="w-8 flex items-center justify-end group-hover:-rotate-[15deg] transition-all ease-in-out duration-300"> <Icon name="ic:round-account-circle" class="w-8 h-8 flex" /></span>
         <span class="max-md:hidden max">About</span></NuxtLink
       >
-      <NuxtLink class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/projects">
+      <NuxtLink aria-label="Projects Page" class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/projects">
         <span class="w-8 flex items-center justify-end group-hover:-rotate-[15deg] transition-all ease-in-out duration-300"> <Icon name="ic:round-work" class="w-8 h-8 flex" /></span>
         <span class="max-md:hidden max">Projects</span></NuxtLink
       >
-      <NuxtLink class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/contact">
+      <NuxtLink aria-label="Contact Page" class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/contact">
         <span class="w-8 flex items-center justify-end group-hover:-rotate-[15deg] transition-all ease-in-out duration-300"> <Icon name="ic:round-mail" class="w-8 h-8 flex" /></span>
         <span class="max-md:hidden max">Contact</span></NuxtLink
       >
-      <NuxtLink class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/dashboard">
+      <NuxtLink aria-label="Dashboard Page" class="flex items-center gap-2 group hover:scale-105 transition-all ease-in-out duration-300 lg:px-3" to="/dashboard">
         <span class="w-8 flex items-center justify-end group-hover:-rotate-[15deg] transition-all ease-in-out duration-300"> <Icon name="ic:round-dashboard" class="w-8 h-8 flex" /></span>
         <span class="max-md:hidden max">Dashboard</span></NuxtLink
       >
