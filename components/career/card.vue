@@ -1,6 +1,6 @@
 <template>
-  <div class="flex gap-3 bg-dark-400 p-4 rounded-2xl items-center">
-    <div class="min-w-16 min-h-16 rounded-xl flex items-center justify-center bg-zinc-500">
+  <div class="flex w-full gap-3 bg-dark-500 p-4 rounded-2xl items-center border border-zinc-700">
+    <div class="min-w-16 min-h-16 rounded-xl flex items-center justify-center bg-zinc-700">
       <slot>
         <Icon class="w-8 h-8" name="mdi:company" />
       </slot>

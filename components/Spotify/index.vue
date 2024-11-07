@@ -1,12 +1,12 @@
 <template>
   <div
     :class="{
-      'bg-dark-700': spotify.isLoading,
-      'bg-green-600': spotify?.litsening && !spotify.isLoading,
+      'animate-border-pulse ': spotify.isLoading,
+      'border-green-600': spotify?.litsening && !spotify.isLoading,
       // 'bg-[#1bce5a]': spotify?.litsening && !spotify.isLoading,
-      'bg-zinc-800': !spotify?.litsening && !spotify.isLoading,
+      'border-zinc-800': !spotify?.litsening && !spotify.isLoading,
     }"
-    class="p-5 rounded-xl duration-150 w-full transition-all ease-in-out flex flex-col gap-3"
+    class="p-5 border-[3px] bg-dark-700 rounded-xl duration-150 w-full transition-all ease-in-out flex flex-col gap-3"
   >
     <div class="flex justify-between">
       <h3 :class="{ 'p-4 bg-white/20 animate-pulse rounded-lg w-52': spotify.isLoading }" class="sm:text-lg font-semibold uppercase">{{ spotify.isLoading ? "" : spotify?.isPlaying ? "Currently Playing" : "Recently Played" }}</h3>
@@ -39,7 +39,7 @@
           >{{ spotify.isLoading ? "" : "on" }}
           <a target="_blank" class="hover:underline font-semibold" :href="spotify.isLoading ? '' : spotify?.track?.album.external_urls.spotify">{{ spotify.isLoading ? "" : spotify.track?.album.name }}</a></span
         >
-        <div v-if="spotify.isPlaying" class="bg-green-700 w-full h-2 transition-all rounded">
+        <div v-if="spotify.isPlaying" class="bg-white/30 w-full h-2 transition-all rounded">
           <div class="bg-white h-2 transition-all rounded" :style="{ width: `${spotify.progressBar}%` }"></div>
         </div>
         <div v-if="spotify.isPlaying" class="flex text-xs sm:text-sm justify-between">

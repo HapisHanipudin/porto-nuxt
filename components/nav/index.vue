@@ -29,9 +29,11 @@
           'translate-x-[calc(24px*3+32px*3)] sm:translate-x-0 sm:translate-y-[calc((32px+24px)*3)]': route.path === '/contact',
           'translate-x-[calc(24px*4+32px*4)] sm:translate-x-0 sm:translate-y-[calc((32px+24px)*4)]': route.path === '/dashboard',
         }"
-        class="absolute top-1/2 -left-3 sm:-top-3 sm:w-full sm:p-3 rounded-xl sm:rounded-xl bg-zinc-800 -z-10 p-3 sm:left-0 sm:px-4 -translate-y-1/2 transition-all duration-500 ease-in-out"
+        class="absolute top-1/2 -left-3 sm:-top-3 sm:w-full sm:p-3 rounded-xl sm:rounded-xl border-2 border-zinc-700 -z-10 p-3 sm:left-0 sm:px-1 -translate-y-1/2 transition-all duration-500 ease-in-out"
       >
-        <div class="sm:h-[32px] transition-all w-8 h-8 duration-500 ease-in-out"></div>
+        <div class="sm:h-[32px] sm:w-full transition-all w-8 h-8 duration-500 ease-in-out flex justify-end">
+          <Icon name="ic:round-chevron-right" class="w-8 h-8 max-sm:hidden opacity-30" />
+        </div>
       </div>
     </nav>
   </div>

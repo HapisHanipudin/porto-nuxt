@@ -8,7 +8,7 @@
         </h2>
         <span class="text-lg text-gray-300">Based in Depok <span class="text-xl ms-1">🇮🇩</span></span>
       </div>
-      <p class="md:leading-8 px-6 text-justify text-pretty">
+      <p class="md:leading-8 text-justify tracking-wider">
         A passionate full-stack developer with a knack for digital innovation, I blend front-end finesse with solid back-end functionality to create impactful, user-driven applications. Focused on crafting sleek, high-performance solutions
         that bring ideas to life—one line of code at a time.
       </p>

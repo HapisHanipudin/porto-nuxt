@@ -5,18 +5,21 @@
         <h2 class="text-3xl font-bold flex gap-1">About</h2>
         <span class="text-lg text-gray-300"> Here is some information about me</span>
       </div>
-      <p class="text-justify font-light">
-        <strong class="font-bold">Muhammad Hafizh Hanifuddin</strong>, a.k.a. Hapis, Hanip, or Udin, is all about bringing energy, curiosity, and creativity to the digital world! Born in Kuningan and now enjoying life in Depok, Hapis is a
-        high school student who started diving into computers way back in grade 2. Fast-forward a few years, and he’s now neck-deep in the world of coding, on a mission to master web development and become a full-stack pro.
-      </p>
-      <p class="text-justify font-light">
-        With a tech toolkit that’s already impressive, Hapis is exploring the ins and outs of JavaScript and sharpening his skills across both front-end and back-end development. But that’s just part of the story! He’s got a serious passion
-        for video editing and graphic design, finding ways to blend technical skills with creativity. Whether he’s crafting visuals, tweaking code, or tackling complex projects, Hapis always brings a unique spark to his work.
-      </p>
-      <p class="text-justify font-light">
-        When he’s not coding or creating, you’ll probably find him leveling up in his favorite games, jamming out to music, or chilling with friends. Hapis’s journey is just getting started, and his drive to keep learning and exploring new
-        tech makes it clear: he's not just aiming for a career—he’s on his way to making a big impact.
-      </p>
+      <div class="flex flex-col gap-4 text-justify font-light tracking-wider">
+        <p>
+          <strong class="font-bold">Muhammad Hafizh Hanifuddin</strong>, yang biasa disapa Hapis, Hanip, atau Udin, adalah siswa SMA yang punya semangat juang tinggi di dunia teknologi dan kreativitas digital. Lahir di Kuningan dan kini
+          menetap di Depok, ia sudah ‘nyemplung’ ke dunia IT sejak duduk di bangku kelas 2 SD! Sejak saat itu, Hapis benar-benar terhipnotis oleh dunia komputer, coding, dan segala hal baru yang bikin otaknya makin encer. Dia gak cuma jago
+          ngoding, tapi juga selalu haus akan pengetahuan baru. Berbekal semangat ini, dia terus mengasah keterampilan di bidang pengembangan aplikasi web dengan tujuan akhir menjadi developer full-stack yang andal.
+        </p>
+        <p>
+          Hapis ini serba bisa! Selain asyik dengan baris-baris kode, dia punya sisi kreatif yang gak kalah keren. Dia sering menghabiskan waktu dengan mengutak-atik video editing dan desain grafis. Alhasil, skill-nya bukan cuma teknis,
+          tapi juga visual, bikin dia semakin ‘full-package’! Nah, kalau lagi gak pusingin proyek atau belajar bahasa pemrograman baru, Hapis suka melepas penat dengan main game, mendengarkan musik, atau seru-seruan bareng teman-temannya.
+        </p>
+        <p>
+          Sekarang, Hapis sedang asyik-asyiknya menjelajahi berbagai framework dan library JavaScript buat ngembangin aplikasi web yang ciamik. Di masa depan, dia pengin banget bisa bikin aplikasi-aplikasi keren yang gak cuma keren
+          tampilannya, tapi juga andal performanya. Siap-siap aja dunia IT, Hapis siap bikin gebrakan!
+        </p>
+      </div>
     </section>
     <hr class="border-zinc-700" />
 

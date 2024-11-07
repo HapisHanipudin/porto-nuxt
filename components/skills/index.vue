@@ -1,11 +1,11 @@
 <template>
   <section id="skills" class="flex flex-col gap-3">
     <div class="flex flex-col gap-1">
-      <h2 class="text-2xl font-semibold"><Icon name="ic:round-code" /> My Skills</h2>
-      <span class="text-lg text-gray-300"> Here are some of my skills</span>
+      <h2 class="text-2xl font-semibold flex items-center gap-3"><Icon name="ic:round-code" /> My Stacks</h2>
+      <span class="text-lg text-gray-300"> Here are some of my tech stacks</span>
     </div>
     <div class="flex gap-3 flex-wrap">
-      <SkillsIcon v-for="skill in skills" :key="skill.name" :name="skill.name" :icon="skill.icon" />
+      <!-- <SkillsIcon v-for="skill in skills" :key="skill.name" :name="skill.name" :icon="skill.icon" /> -->
     </div>
   </section>
 </template>

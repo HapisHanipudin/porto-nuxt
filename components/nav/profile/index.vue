@@ -6,8 +6,8 @@
         <span>Hi! I'm</span>
         <h1 class="text-3xl font-bold">Hapis Hanipudin</h1>
         <span class="text-sm relative" :class="{ typing: isTyping }">
-          a {{ text }}
-          <div class="w-1 h-full absolute -translate-x-1 -right-1 blink top-0 bg-slate-300"></div>
+          a {{ text }} <span class="opacity-0">.</span>
+          <div class="w-1 h-full absolute -translate-x-[6px] -right-1 blink top-0 bg-slate-300"></div>
         </span>
       </div>
     </div>

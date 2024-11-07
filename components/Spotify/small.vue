@@ -1,14 +1,25 @@
 <template>
+  <!-- <div :class="{ 'max-lg:max-h-0': route.path === '/dashboard', 'max-lg:max-h-screen': route.path !== '/dashboard' }" class="overflow-hidden transition-all duration-800"> -->
   <div
     :class="{
-      'bg-zinc-700': spotify.isLoading,
-      'bg-green-600': spotify?.litsening && !spotify.isLoading,
-      'bg-zinc-800': !spotify?.litsening && !spotify.isLoading,
+      'animate-border-pulse ': spotify.isLoading,
+      'border-green-600': spotify?.litsening && !spotify.isLoading,
+      'border-zinc-800': !spotify?.litsening && !spotify.isLoading,
     }"
-    class="flex gap-2 duration-150 transition-all ease-in-out p-3 rounded-xl"
+    class="flex border bg-zinc-900 gap-2 duration-150 transition-all ease-in-out p-3 rounded-xl"
   >
     <div class="flex gap-3 max-xl:flex-wrap max-xl:justify-center">
-      <img :class="{ 'animate-pulse bg-zinc-600 border-0': spotify.isLoading }" class="rounded aspect-square min-w-[72px] max-w-[72px]" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
+      <div :class="{ 'animate-spin-slower': spotify.isLoading || !spotify?.litsening, 'animate-spin-slow': !spotify?.isLoading && spotify?.litsening }" class="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center">
+        <!-- <div class="w-[4.25rem] h-[4.25rem] rounded-full border-t-transparent border-b-transparent border flex items-center justify-center"> -->
+        <!-- <div class="w-[3.5rem] h-[3.5rem] rotate-45 rounded-full border-r-transparent border-l-transparent border-[0.5px] flex items-center justify-center"> -->
+        <div :class="{ 'animate-pulse bg-zinc-600 border-0': spotify.isLoading }" class="w-[3.75rem] h-[3.75rem] rotate-45 rounded-full border border-white flex items-center justify-center overflow-hidden relative">
+          <div class="w-[15px] h-[15px] rotate-45 rounded-full border bg-black border-white flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+          <img class="rounded aspect-square object-cover" :src="spotify.isLoading ? '' : spotify?.track?.album?.images[2]?.url" alt="" />
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+      </div>
       <div :class="spotify.isLoading ? 'gap-2' : ''" class="flex-col flex justify-center">
         <a target="_blank" :href="spotify?.track?.external_urls?.spotify" class="font-semibold text-wrap" :class="{ 'p-3 w-40 animate-pulse bg-zinc-600 rounded': spotify.isLoading }">{{ spotify.isLoading ? "" : spotify?.track?.name }}</a>
         <span :class="{ 'p-2 w-32 animate-pulse bg-zinc-600 rounded': spotify.isLoading }">
@@ -25,9 +36,12 @@
       </svg>
     </a>
   </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
+const route = useRoute();
+
 const spotify = useSpotifyStore();
 
 onBeforeMount(async () => {

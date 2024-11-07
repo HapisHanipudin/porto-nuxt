@@ -8,8 +8,19 @@ export default <Partial<Config>>{
       animation: {
         beat: "beat 0.7s ease-in-out infinite",
         shake: "shake 2s linear infinite",
+        "border-pulse": "border-pulse 2s linear infinite",
+        "spin-slower": "spin 4s linear infinite",
+        "spin-slow": "spin 2s linear infinite",
       },
       keyframes: {
+        "border-pulse": {
+          "0%, 100%": {
+            "border-color": "rgba(165, 165, 165, 0.6)",
+          },
+          "50%": {
+            "border-color": "rgba(165, 165, 165, 0.1)",
+          },
+        },
         beat: {
           "0%": { transform: "scale(1.2)" },
           "50%": { transform: "scale(1)" },
