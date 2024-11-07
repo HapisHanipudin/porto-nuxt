@@ -1,6 +1,6 @@
 <template>
   <div class="flex gap-4 items-center">
-    <NuxtImg width="64" height="64" src="/img/squarelogo.png" class="rounded-2xl border-2 border-zinc-700 aspect-square" alt="" />
+    <NuxtImg width="64" height="64" src="/img/squarelogo.webp" class="rounded-2xl border-2 border-zinc-700 aspect-square" alt="" />
     <div class="flex flex-col gap-3 w-full">
       <div>
         <span>Hi! I'm</span>
