@@ -12,7 +12,17 @@ export const useSpotifyStore = defineStore({
   }),
   actions: {
     async initSpotify() {
-      const { litsening, isPlaying, track, progress } = await $fetch("/api/spotify");
+      const {
+        litsening,
+        isPlaying,
+        track,
+        progress,
+      }: {
+        litsening: boolean;
+        isPlaying: boolean;
+        track: object;
+        progress: number;
+      } = await $fetch("/api/spotify");
 
       this.litsening = litsening;
       this.isPlaying = isPlaying;
@@ -34,7 +44,7 @@ export const useSpotifyStore = defineStore({
     },
   },
   getters: {
-    progressBar(state) {
+    progressBar(state: any) {
       if (state.litsening) {
         return (state.progress / state.track?.duration_ms) * 100;
       } else {

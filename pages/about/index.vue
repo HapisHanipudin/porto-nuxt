@@ -5,7 +5,7 @@
         <h2 class="text-3xl font-bold flex gap-1">About</h2>
         <span class="text-lg text-gray-300"> Here is some information about me</span>
       </div>
-      <div class="flex flex-col gap-4 text-justify font-light tracking-wider">
+      <div class="flex flex-col gap-4 text-justify font-light tracking-wider text-sm sm:text-base">
         <p>
           <strong class="font-bold">Muhammad Hafizh Hanifuddin</strong>, yang biasa disapa Hapis, Hanip, atau Udin, adalah siswa SMA yang punya semangat juang tinggi di dunia teknologi dan kreativitas digital. Lahir di Kuningan dan kini
           menetap di Depok, ia sudah ‘nyemplung’ ke dunia IT sejak duduk di bangku kelas 2 SD! Sejak saat itu, Hapis benar-benar terhipnotis oleh dunia komputer, coding, dan segala hal baru yang bikin otaknya makin encer. Dia gak cuma jago
