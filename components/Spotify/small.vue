@@ -1,5 +1,5 @@
 <template>
-  <div :class="route.path === '/dashboard' ? 'max-lg:max-h-0' : 'max-lg:max-h-[106px]'" class="overflow-hidden transition-all ease-in-out duration-800">
+  <div :class="route.path === '/dashboard' ? 'max-lg:max-h-0' : 'max-lg:max-h-[106px]'" class="overflow-y-clip transition-all ease-in-out duration-800">
     <div
       :class="{
         'animate-border-pulse ': spotify.isLoading,
@@ -9,7 +9,10 @@
       class="flex border bg-zinc-900 gap-2 duration-150 transition-all ease-in-out p-3 rounded-xl"
     >
       <div class="flex gap-3 max-xl:flex-wrap max-xl:justify-center">
-        <div :class="{ 'animate-spin-slower': spotify.isLoading || !spotify?.litsening, 'animate-spin-slow': !spotify?.isLoading && spotify?.litsening }" class="w-20 h-20 rounded-full border-2 border-white flex items-center justify-center">
+        <div
+          :class="{ 'animate-spin-slower': spotify.isLoading || !spotify?.litsening, 'animate-spin-slow': !spotify?.isLoading && spotify?.litsening }"
+          class="min-w-20 h-20 rounded-full border-2 border-white flex items-center justify-center transition-all"
+        >
           <div :class="{ 'animate-pulse bg-zinc-600 border-0': spotify.isLoading }" class="w-[3.75rem] h-[3.75rem] rotate-45 rounded-full border border-white flex items-center justify-center overflow-hidden relative">
             <div class="w-[15px] h-[15px] rotate-45 rounded-full border bg-black border-white flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
@@ -33,14 +36,28 @@
           </span>
         </div>
       </div>
-      <a class="ml-auto" target="_blank" rel="noopener noreferrer" aria-label="Spotify Profile - opens in new tab" href="https://open.spotify.com/user/fngdg86af3asj1xk0gjjfcg07?si=cdeb5c871dc04358">
-        <svg xmlns="http://www.w3.org/2000/svg" height="14" width="13.5625" viewBox="0 0 496 512">
-          <path
-            fill="currentColor"
-            d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"
-          />
-        </svg>
-      </a>
+      <div class="ml-auto flex flex-col justify-between items-end">
+        <a target="_blank" rel="noopener noreferrer" aria-label="Spotify Profile - opens in new tab" href="https://open.spotify.com/user/fngdg86af3asj1xk0gjjfcg07?si=cdeb5c871dc04358">
+          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="13.5625" viewBox="0 0 496 512">
+            <path
+              fill="currentColor"
+              d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z"
+            />
+          </svg>
+        </a>
+        <div v-if="spotify.isPlaying" class="relative group">
+          <div class="overflow-visible group-hover:opacity-100 opacity-0 translate-y-4 group-hover:-translate-y-8 pb-1 absolute top-0 left-1/2 transform -translate-x-1/2 px-2 bg-dark-400 rounded-lg transition-all duration-300 ease-in-out">
+            <span>
+              <span class="whitespace-nowrap text-green-400 text-xs">
+                {{ spotify.device?.name }}
+              </span>
+            </span>
+          </div>
+          <Icon v-if="spotify.device.type === 'Computer'" name="gridicons:computer" class="h-4 w-4" />
+          <Icon v-if="spotify.device.type === 'Phone'" name="gridicons:phone" class="h-4 w-4" />
+          <Icon v-if="spotify.device.type === 'Speaker'" name="ic:round-speaker" class="h-4 w-4" />
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -9,6 +9,7 @@ export const useSpotifyStore = defineStore({
     progress: 0,
     loaded: false,
     isLoading: true,
+    device: {},
   }),
   actions: {
     async initSpotify() {
@@ -17,11 +18,13 @@ export const useSpotifyStore = defineStore({
         isPlaying,
         track,
         progress,
+        device,
       }: {
         litsening: boolean;
         isPlaying: boolean;
         track: object;
         progress: number;
+        device: object;
       } = await $fetch("/api/spotify");
 
       this.litsening = litsening;
@@ -30,6 +33,7 @@ export const useSpotifyStore = defineStore({
       this.progress = progress;
       this.loaded = true;
       this.isLoading = false;
+      this.device = device;
       this.incrementProgress();
     },
     incrementProgress() {

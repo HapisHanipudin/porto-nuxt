@@ -23,7 +23,7 @@ export const getAccessToken = async () => {
 
 // Get the current now playing track of given user access token.
 export const getNowPlaying = async (accessToken) => {
-  return await $fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+  return await $fetch("https://api.spotify.com/v1/me/player/", {
     headers: {
       Authorization: `Bearer ${accessToken}`,
       "Content-Type": "application/x-www-form-urlencoded",

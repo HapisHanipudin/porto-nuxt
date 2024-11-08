@@ -8,6 +8,7 @@ export default defineEventHandler(async (event) => {
     isPlaying: false,
     track: null,
     progress: null,
+    device: {},
   };
 
   let accessToken = await client.get("spotifyAccessToken");
@@ -23,6 +24,7 @@ export default defineEventHandler(async (event) => {
     res.isPlaying = nowPlaying.is_playing;
     res.track = nowPlaying.item;
     res.progress = nowPlaying.progress_ms;
+    res.device = nowPlaying.device;
   } else {
     const recentlyPlayed: any = await getRecentlyPlayed(accessToken);
     if (recentlyPlayed) {
