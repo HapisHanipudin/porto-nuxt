@@ -54,8 +54,9 @@
             </span>
           </div>
           <Icon v-if="spotify.device.type === 'Computer'" name="gridicons:computer" class="h-4 w-4" />
-          <Icon v-if="spotify.device.type === 'Phone'" name="gridicons:phone" class="h-4 w-4" />
-          <Icon v-if="spotify.device.type === 'Speaker'" name="ic:round-speaker" class="h-4 w-4" />
+          <Icon v-else-if="spotify.device.type === 'Smartphone'" name="gridicons:phone" class="h-4 w-4" />
+          <Icon v-else-if="spotify.device.type === 'Speaker'" name="ic:round-speaker" class="h-4 w-4" />
+          <Icon v-else name="ic:round-headphones" class="h-4 w-4" />
         </div>
       </div>
     </div>
